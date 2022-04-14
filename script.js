@@ -1,6 +1,7 @@
 // Assignment code here
 
 // create variables storing our character information
+// Global variables
 var upperCaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var lowerCaseCharacters = upperCaseCharacters.map(element => {
   return element.toLocaleLowerCase();
@@ -59,7 +60,7 @@ function generatePassword() {
     }
   
     // make sure that at least one option is selected
-    debugger;
+    // debugger;
     if(!includeLowercase && !includeUppercase && !includeSpecialCharacter && !includeNumbers) {
       // console.log('worked')
       window.alert('Please select at least one type of characters for your password!');
@@ -69,30 +70,30 @@ function generatePassword() {
     if(includeLowercase) {
       passwordCharacters = passwordCharacters.concat(lowerCaseCharacters);
     }
-    console.log(passwordCharacters)
+    // console.log(passwordCharacters)
     if(includeUppercase) {
       passwordCharacters = passwordCharacters.concat(upperCaseCharacters);
     }
-    console.log(passwordCharacters)
+    // console.log(passwordCharacters)
     if(includeSpecialCharacter) {
       passwordCharacters = passwordCharacters.concat(specialCharacters);
     }
-    console.log(passwordCharacters)
+    // console.log(passwordCharacters)
     if(includeNumbers) {
       passwordCharacters = passwordCharacters.concat(numericCharacters);
     }
-    console.log(passwordCharacters);
+    // console.log(passwordCharacters);
   }
   confirmCharacters(); // not sure where to call this function
 
   
-  debugger;
+  // debugger;
   //select random characters out of selected character options
   var finalPassword = '';
   for(var i = 0; i < numberOfCharacters; i++) {
     var indx = Math.floor(Math.random() * passwordCharacters.length);
     finalPassword += passwordCharacters[indx];
-    console.log(indx)
+    // console.log(indx)
   }
   // debugger;
 return finalPassword;
