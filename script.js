@@ -59,7 +59,7 @@ function generatePassword() {
     }
   
     // make sure that at least one option is selected
-    // debugger;
+    debugger;
     if(!includeLowercase && !includeUppercase && !includeSpecialCharacter && !includeNumbers) {
       // console.log('worked')
       window.alert('Please select at least one type of characters for your password!');
@@ -67,31 +67,36 @@ function generatePassword() {
     }
     // Concatenate selected characters
     if(includeLowercase) {
-      passwordCharacters += lowerCaseCharacters;
+      passwordCharacters = passwordCharacters.concat(lowerCaseCharacters);
     }
+    console.log(passwordCharacters)
     if(includeUppercase) {
-      passwordCharacters += upperCaseCharacters;
+      passwordCharacters = passwordCharacters.concat(upperCaseCharacters);
     }
+    console.log(passwordCharacters)
     if(includeSpecialCharacter) {
-      passwordCharacters += specialCharacters;
+      passwordCharacters = passwordCharacters.concat(specialCharacters);
     }
+    console.log(passwordCharacters)
     if(includeNumbers) {
-      passwordCharacters += numberOfCharacters;
+      passwordCharacters = passwordCharacters.concat(numericCharacters);
     }
-   console.log(passwordCharacters);
+    console.log(passwordCharacters);
   }
   confirmCharacters(); // not sure where to call this function
 
-  console.log(passwordCharacters);
+  
   debugger;
   //select random characters out of selected character options
   var finalPassword = '';
   for(var i = 0; i < numberOfCharacters; i++) {
     var indx = Math.floor(Math.random() * passwordCharacters.length);
     finalPassword += passwordCharacters[indx];
+    console.log(indx)
   }
   // debugger;
 return finalPassword;
+
 };
 
 // Get references to the #generate element
